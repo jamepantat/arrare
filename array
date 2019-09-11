@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+void display(int salary[],int num);
+int cal_bonus(int);
+int main()
+{
+	int num;
+	cout << "Enter Number of person : " ;
+	cin >> num;
+	int *salary = new int[num];
+	for (int i = 1 ; i <= num ; i++)
+	{
+		cout << "Enter the salary " << i << ":";
+			cin >> salary[i];
+	}
+	cout << "----------------------------------------------------------------------------------------------" << endl;
+	display(salary,num);
+	return(0);
+}
+void display(int salary[],int num)
+{
+	cout << "There are " << num << " persons." <<endl;
+	for (int i = 1 ; i<= num ; i++)
+	{
+		cout << "The Salary for person " << i << " = " << salary[i] << " and bonus " << cal_bonus(salary[i]) << endl;
+	}
+	cout <<"-----------------------------------------------------------------------------------------------"<<endl;
+}
+int cal_bonus(int salary)
+{
+	return(salary*2);
+}
